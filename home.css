@@ -5,6 +5,9 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+img.high-quality {
+    image-rendering: -webkit-optimize-contrast;
+  }
 
 /* Header */
 header {
