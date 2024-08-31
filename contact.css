@@ -5,9 +5,8 @@ body {
     padding: 0;
     background-color: #f9f9f9;
 }
-
 /* Container */
-.ec {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,77 +19,82 @@ body {
     border-radius: 8px;
 }
 
-.uc {
+/* Title Section */
+.section {
     text-align: center;
     margin-bottom: 20px;
 }
 
 /* Title */
-.avy {
+.section-title {
     font-size: 2em;
     margin-bottom: 10px;
     color: #333;
 }
 
-/* Subtitle */
-.lb {
+/* Description */
+.section-description {
     font-size: 1em;
     color: #666;
 }
 
-/* Card Container */
-.ld {
+/* Support Sections Container */
+.support-sections {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center; /* Center cards horizontally */
 }
 
-/* Individual Card */
-.lx {
+/* Individual Support Section */
+.support-section {
     background-color: #f0f4f8;
     border-radius: 8px;
     padding: 20px;
-    margin: 10px;
-
+    margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
+    width: 700px;
+    max-width: 1500px; /* Optional: limit the card width */
 }
 
-.nn {
+/* Icon Wrapper */
+.icon-wrapper {
     background-color: #2c3e50;
     padding: 10px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
 }
 
-.oi {
+/* Icon */
+.support-icon {
     width: 30px;
     height: 30px;
     color: #fff;
 }
 
-.awe {
+/* Support Section Title */
+.support-title {
     font-size: 1.2em;
     margin-bottom: 10px;
     color: #2c3e50;
 }
 
-/* Card Description */
-.aww {
+/* Support Section Description */
+.support-description {
     font-size: 0.95em;
     color: #555;
     margin-bottom: 10px;
 }
 
 /* Link Styles */
-.awg {
+.support-link {
     text-decoration: none;
     color: #3498db;
     font-weight: bold;
 }
 
-.awg:hover {
+.support-link:hover {
     text-decoration: underline;
 }
 

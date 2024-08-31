@@ -1,49 +1,44 @@
 document.getElementById('joinCommunityBtn').addEventListener('click', function() {
     const formContainer = document.getElementById('communityFormContainer');
     formContainer.style.display = 'block';
-    console.log('Form container displayed');  // Debugging line
+});
+
+const countryToStates = {
+    India: ['Maharashtra', 'Karnataka', 'Tamil Nadu', 'Gujarat', 'Rajasthan'],
+    USA: ['California', 'New York', 'Texas', 'Florida', 'Illinois'],
+    UK: ['England', 'Scotland', 'Wales', 'Northern Ireland'],
+    Australia: ['New South Wales', 'Queensland', 'Victoria', 'Tasmania'],
+    // Add more countries and states as needed
+};
+
+document.getElementById('country').addEventListener('change', function() {
+    const country = this.value;
+    const states = countryToStates[country] || [];
+    const stateSelect = document.getElementById('state');
+    
+    stateSelect.innerHTML = '<option value="" disabled selected>Select State</option>';
+    
+    states.forEach(function(state) {
+        const option = document.createElement('option');
+        option.value = state;
+        option.textContent = state;
+        stateSelect.appendChild(option);
+    });
 });
 
 document.getElementById('communityForm').addEventListener('submit', function(event) {
-    event.preventDefault();  // Prevents the form from submitting in the traditional way
+    event.preventDefault();
 
-    console.log('Form submission triggered');  // Debugging line
-
-    const countryCodeElement = document.getElementById('countryCode');
-    const phoneElement = document.getElementById('phone');
-    const nameElement = document.getElementById('name');
-    const countryElement = document.getElementById('country');
-    const stateElement = document.getElementById('state');
-    const joinStateCommunityElement = document.getElementById('joinStateCommunity');
-
-    // Logging each element to see which one is missing
-    console.log('Country Code Element:', countryCodeElement);
-    console.log('Phone Element:', phoneElement);
-    console.log('Name Element:', nameElement);
-    console.log('Country Element:', countryElement);
-    console.log('State Element:', stateElement);
-    console.log('Join State Community Element:', joinStateCommunityElement);
-
-    if (!countryCodeElement || !phoneElement || !nameElement || !countryElement || !stateElement || !joinStateCommunityElement) {
-        console.error('One or more elements are missing from the DOM');
-        return;
-    }
-
-    // If all elements exist, proceed to collect the data
-    const countryCode = countryCodeElement.value;
-    const phoneNumber = phoneElement.value;
+    const countryCode = document.getElementById('countryCode').value;
+    const phoneNumber = document.getElementById('phone').value;
     const fullPhoneNumber = `${countryCode} ${phoneNumber}`;
 
-    const name = nameElement.value;
-    const country = countryElement.value;
-    const state = stateElement.value;
-    const joinStateCommunity = joinStateCommunityElement.checked ? "Yes" : "No";
+    const name = document.getElementById('name').value;
+    const country = document.getElementById('country').value;
+    const state = document.getElementById('state').value;
+    const joinStateCommunity = document.getElementById('joinStateCommunity').checked ? "Yes" : "No";
 
-    // Alert notification with all the form details
     alert(`Thank you, ${name}, for joining the community!\n\nPhone: ${fullPhoneNumber}\nCountry: ${country}\nState: ${state}\nJoin State Community: ${joinStateCommunity}`);
 
-    console.log('Alert should have been displayed');  // Debugging line
-
-    // Optionally reset the form after submission
     document.getElementById('communityForm').reset();
 });
