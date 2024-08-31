@@ -132,3 +132,12 @@ nav ul li a {
 .auth-buttons .signup:hover {
     background-color: #0056b3;
 }
+
+#rest{
+    height: 300px;
+    width: 300px;
+}
+
+body{
+    background-image: url();
+}
