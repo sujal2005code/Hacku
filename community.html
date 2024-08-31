@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Community</title>
+    <link rel="stylesheet" href="community.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Join Our Community</h2>
+        <button id="joinCommunityBtn">Join Now</button>
+        
+        <div id="communityFormContainer" style="display: none;">
+            <form id="communityForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select id="state" name="state" required>
+                        <option value="" disabled selected>Select State</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <!-- Add more states as needed -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="joinStateCommunity">Join State Community</label>
+                    <input type="checkbox" id="joinStateCommunity" name="joinStateCommunity">
+                </div>
+
+                <button type="submit" class="btn-submit">Join Community</button>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="community.js"></script>
+</body>
+</html>
